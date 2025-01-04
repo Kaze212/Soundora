@@ -11,11 +11,11 @@ function closeSidebar() {
 }
 
 
-// Scroll to Top functionality
+
 document.addEventListener('DOMContentLoaded', () => {
   const scrollToTopButton = document.getElementById('scrollToTop');
 
-  // Show or hide the button based on scroll position
+  
   window.addEventListener('scroll', () => {
       if (window.scrollY > 300) {
           scrollToTopButton.classList.add('visible');
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
   });
 
-  // Scroll to top when button is clicked
+
   scrollToTopButton.addEventListener('click', () => {
       window.scrollTo({
           top: 0,
