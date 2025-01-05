@@ -2,3 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+    #tokenSection {
+      display: none;
+    }
+  
+    #deviceSection {
+      display: none;
+    }
+  
+    #albumImage {
+      width: 300px;
+      margin: 20px;
+    }
+  
+    #trackTitle {
+      font-size: 3em;
+    }
+  
+    #trackArtist {
+      font-size: 2em;
+    }
+  
+    .welcomeText {
+      font-size: 2em;
+    }
+  }

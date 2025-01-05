@@ -1276,6 +1276,27 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+#tokenSection {
+  display: none;
+}
+
+#deviceSection {
+  display: none;
+}
+
+#albumImage {
+  width: 300px;
+  margin: 20px;
+}
+
+#trackTitle {
+  font-size: 3em;
+}
+
+#trackArtist {
+  font-size: 2em;
+}
+
 .hover\:bg-blue-600:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(37 99 235 / var(--tw-bg-opacity, 1));
@@ -1487,4 +1508,3 @@ video {
   --tw-rotate: 180deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
-

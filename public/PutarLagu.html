@@ -10,6 +10,49 @@
 
 <body onload="onPageLoad()" class="bg-gray-100 min-h-screen">
 
+    <span class="absolute text-white text-4xl top-5 left-4 cursor-pointer" onclick="openSidebar()">
+        <i class="bi bi-filter-left px-2 bg-gray-900 rounded-md"></i>
+    </span>
+
+    <div id="sidebar" class="sidebar fixed top-0 left-0 bottom-0 w-0 lg:w-[300px] hidden p-4 overflow-y-auto text-center bg-gray-900 transition-all duration-300 ease-in-out">
+        <div class="text-gray-100 text-xl">
+            <div class="p-2.5 mt-1 flex items-center">
+                <i class="bi bi-spotify"></i>
+                <h1 class="font-bold text-gray-200 text-[15px] ml-3">Soundora | Connect To Spotify</h1>
+            </div>
+            <div class="my-2 bg-gray-600 h-[1px]"></div>
+        </div>
+
+        <a href="index.html" class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
+            <i class="bi bi-house-door-fill"></i>
+            <span class="text-[15px] ml-4 text-gray-200 font-bold">Home</span>
+        </a>
+
+        <div class="my-2 bg-gray-600 h-[1px]"></div>
+
+        <a href="TopLagu.html" class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-green-600 text-white">
+            <i class="bi bi-heart-fill"></i>
+            <span class="text-[15px] ml-4 text-gray-200 font-bold">Top Lagu Saat Ini</span>
+        </a>
+
+        <a href="ArtistFav.html" class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-green-600 text-white">
+            <i class="bi bi-file-person-fill"></i>
+            <span class="text-[15px] ml-4 text-gray-200 font-bold">Artist Yang Di Ikuti</span>
+        </a>
+
+        <a href="PutarLagu.html" class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-green-600 text-white">
+            <i class="bi bi-music-note-beamed"></i>
+            <span class="text-[15px] ml-4 text-gray-200 font-bold">Putar Lagu Anda Di Sini</span>
+        </a>
+
+        <div class="my-2 bg-gray-600 h-[1px]"></div>
+        
+        <button onclick="closeSidebar()" class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-red-600 text-white">
+            <i class="bi bi-x-circle-fill"></i>
+            <span class="text-[15px] ml-4 text-gray-200 font-bold">Close Sidebar</span>
+        </button>
+    </div>
+
     <div class="container mx-auto p-6">
 
         <!-- Token Section -->
@@ -79,7 +122,7 @@
             </div>
             
             <!-- Player Controls -->
-            <div class="flex gap-2">
+            <div class="flex flex-wrap gap-2 mt-4">
                 <button onclick="previous()" class="bg-gray-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-gray-700">Prev</button>
                 <button onclick="shuffle()" class="bg-purple-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-purple-700">Shuffle</button>
                 <button onclick="play()" class="bg-green-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-green-700">Play</button>
