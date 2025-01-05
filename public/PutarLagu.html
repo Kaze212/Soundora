@@ -1,0 +1,95 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soundora</title>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" />
+    <link rel="icon" type="image/x-icon" href="../src/asset/favicon.ico">
+</head>
+
+<body onload="onPageLoad()" class="bg-gray-100 min-h-screen">
+
+    <div class="container mx-auto p-6">
+
+        <!-- Token Section -->
+        <div id="tokenSection" class="bg-white shadow-md rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Putar Lagu Favorit Mu disini</h2>
+            <p class="mb-4 text-gray-600">
+               Silahkan Masukan client id dan client secret nya
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label for="clientId" class="block text-sm font-medium text-gray-700">Client ID</label>
+                    <input type="text" id="clientId" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="">
+                </div>
+                <div>
+                    <label for="clientSecret" class="block text-sm font-medium text-gray-700">Client Secret</label>
+                    <input type="text" id="clientSecret" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="">
+                </div>
+            </div>
+            <button onclick="requestAuthorization()" class="mt-4 w-full md:w-auto bg-indigo-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-indigo-700">
+                Request Authorization
+            </button>
+        </div>
+
+        <div id="deviceSection" class="bg-white shadow-md rounded-lg p-6">
+            
+
+            <!-- Devices -->
+            <div class="mb-6">
+                <label for="devices" class="block text-sm font-medium text-gray-700">Devices</label>
+                <select id="devices" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"></select>
+                <div class="flex gap-2 mt-4">
+                    <button onclick="refreshDevices()" class="bg-blue-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-700">Refresh Devices</button>
+                    <button onclick="transfer()" class="bg-gray-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-gray-700">Transfer</button>
+                </div>
+            </div>
+
+            <!-- Playlists -->
+            <div class="mb-6">
+                <label for="playlists" class="block text-sm font-medium text-gray-700">Playlists</label>
+                <select id="playlists" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"></select>
+                <button onclick="refreshPlaylists()" class="mt-4 bg-blue-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-700">Refresh Playlists</button>
+            </div>
+
+            <!-- Tracks -->
+            <div class="mb-6">
+                <label for="tracks" class="block text-sm font-medium text-gray-700">Tracks</label>
+                <select id="tracks" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"></select>
+                <button onclick="fetchTracks()" class="mt-4 bg-blue-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-700">Fetch Tracks</button>
+            </div>
+
+            <div class="mb-6">
+                <label for="album" class="block text-sm font-medium text-gray-700">Album</label>
+                <input id="album" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+            </div>
+
+            <!-- Currently Playing -->
+            <div class="mt-6">
+                <h3 class="text-xl font-bold text-gray-800">Currently Playing</h3>
+                <button onclick="currentlyPlaying()" class="mt-4 bg-blue-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-700">Refresh Currently Playing</button>
+                <div class="flex items-center gap-4 mt-4">
+                    <img id="albumImage" src="" class="rounded-lg shadow-md">
+                    <div>
+                        <div id="trackTitle" class="text-lg font-bold text-gray-800"></div>
+                        <div id="trackArtist" class="mt-4 text-sm text-gray-600"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Player Controls -->
+            <div class="flex gap-2">
+                <button onclick="previous()" class="bg-gray-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-gray-700">Prev</button>
+                <button onclick="shuffle()" class="bg-purple-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-purple-700">Shuffle</button>
+                <button onclick="play()" class="bg-green-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-green-700">Play</button>
+                <button onclick="pause()" class="bg-red-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-red-700">Pause</button>
+                <button onclick="next()" class="bg-gray-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-gray-700">Next</button>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
