@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 var redirect_uri = "https://kaze212.github.io/Soundora/public/PutarLagu.html";
 
-var client_id = ""; 
-var client_secret = ""; 
+var client_id = "e19997eb537d4f96aa90a16e5ad5f5be"; 
+var client_secret = "ffcabaeac89c456f942149b29191354a"; 
 
 var access_token = null;
 var refresh_token = null;
@@ -65,11 +65,11 @@ function onPageLoad(){
     else{
         access_token = localStorage.getItem("access_token");
         if ( access_token == null ){
-            // we don't have an access token so present token section
+            
             document.getElementById("tokenSection").style.display = 'block';  
         }
         else {
-            // we have an access token so present device section
+           
             document.getElementById("deviceSection").style.display = 'block';  
             refreshDevices();
             refreshPlaylists();
@@ -82,7 +82,7 @@ function onPageLoad(){
 function handleRedirect(){
     let code = getCode();
     fetchAccessToken( code );
-    window.history.pushState("", "", redirect_uri); // remove param from url
+    window.history.pushState("", "", redirect_uri); 
 }
 
 function getCode(){
@@ -99,7 +99,7 @@ function requestAuthorization(){
     client_id = document.getElementById("clientId").value;
     client_secret = document.getElementById("clientSecret").value;
     localStorage.setItem("client_id", client_id);
-    localStorage.setItem("client_secret", client_secret); // In a real app you should not expose your client_secret to the user
+    localStorage.setItem("client_secret", client_secret); 
 
     let url = AUTHORIZE;
     url += "?client_id=" + client_id;
@@ -107,7 +107,7 @@ function requestAuthorization(){
     url += "&redirect_uri=" + encodeURI(redirect_uri);
     url += "&show_dialog=true";
     url += "&scope=user-read-private user-read-email user-modify-playback-state user-read-playback-position user-library-read streaming user-read-playback-state user-read-recently-played playlist-read-private";
-    window.location.href = url; // Show Spotify's authorization screen
+    window.location.href = url; 
 }
 
 function fetchAccessToken( code ){
